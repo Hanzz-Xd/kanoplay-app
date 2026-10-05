@@ -32,15 +32,15 @@ jobs:
         run: npx cap sync android
 
       - name: Override version
-  run: |
-    sed -i 's/versionCode [0-9]*/versionCode 8/' android/app/build.gradle
-    sed -i 's/versionName "[^"]*"/versionName "2.0.0"/' android/app/build.gradle
+        run: |
+          sed -i 's/versionCode [0-9]*/versionCode 8/' android/app/build.gradle
+          sed -i 's/versionName "[^"]*"/versionName "2.0.0"/' android/app/build.gradle
 
-- name: Build APK
-  run: |
-    cd android
-    chmod +x gradlew
-    ./gradlew assembleDebug
+      - name: Build APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
