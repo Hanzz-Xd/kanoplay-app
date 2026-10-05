@@ -1,0 +1,11 @@
+{
+  "appId": "com.kano.playjv",
+  "appName": "KanoPlay",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
